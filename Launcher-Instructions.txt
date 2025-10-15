@@ -1,0 +1,113 @@
+========================================
+LEGACY PLANNER - ONE-CLICK LAUNCHER
+========================================
+
+You now have 3 launcher files:
+
+1. START-LEGACY-PLANNER.bat
+   - ONE-CLICK START!
+   - Starts both backend and frontend automatically
+   - Opens browser automatically
+   - Creates 2 colored windows (Green=Backend, Yellow=Frontend)
+
+2. STOP-LEGACY-PLANNER.bat
+   - ONE-CLICK STOP!
+   - Closes all Node.js servers
+   - Quick shutdown
+
+3. LEGACY-PLANNER-MENU.bat
+   - CONTROL PANEL!
+   - Menu with options to Start/Stop/Check status
+   - Open project folders
+   - Most user-friendly option
+
+========================================
+HOW TO USE
+========================================
+
+OPTION A - Quick Start (Recommended):
+--------------------------------------
+1. Double-click: START-LEGACY-PLANNER.bat
+2. Wait 10-15 seconds
+3. Browser opens automatically to http://localhost:3000
+4. You'll see 2 command windows:
+   - GREEN window = Backend (keep open!)
+   - YELLOW window = Frontend (keep open!)
+5. Use the application!
+6. To stop: Double-click STOP-LEGACY-PLANNER.bat
+
+OPTION B - Control Panel:
+--------------------------
+1. Double-click: LEGACY-PLANNER-MENU.bat
+2. Choose option 1 to start
+3. Choose option 2 to stop
+4. Choose option 5 to check if running
+
+========================================
+INSTALLATION STEPS
+========================================
+
+1. Copy these 3 .bat files to:
+   C:\Simulator\legacy-planner\
+
+2. That's it! You're ready to use!
+
+File locations:
+- START-LEGACY-PLANNER.bat → C:\Simulator\legacy-planner\
+- STOP-LEGACY-PLANNER.bat → C:\Simulator\legacy-planner\
+- LEGACY-PLANNER-MENU.bat → C:\Simulator\legacy-planner\
+
+========================================
+WHAT HAPPENS WHEN YOU START?
+========================================
+
+The START script will:
+1. Check if Node.js is installed
+2. Open GREEN window - Backend server (Port 3001)
+3. Open YELLOW window - Frontend app (Port 3000)
+4. Wait 8 seconds for servers to start
+5. Automatically open http://localhost:3000 in browser
+6. Show success message
+
+Keep both windows open while using the app!
+
+========================================
+TROUBLESHOOTING
+========================================
+
+Problem: "Node.js is not installed"
+Solution: Install from https://nodejs.org/
+
+Problem: "Port already in use"
+Solution: Run STOP-LEGACY-PLANNER.bat first
+
+Problem: Browser doesn't open
+Solution: Manually open http://localhost:3000
+
+Problem: Backend connection error
+Solution: Wait 20 seconds and refresh browser
+
+========================================
+ADVANCED - Create Desktop Shortcuts
+========================================
+
+Want quick access from your desktop?
+
+1. Right-click on START-LEGACY-PLANNER.bat
+2. Choose "Send to" → "Desktop (create shortcut)"
+3. Rename shortcut to "🚀 Start Legacy Planner"
+
+Do the same for STOP-LEGACY-PLANNER.bat!
+
+========================================
+TIPS
+========================================
+
+✓ Always use START script to launch the app
+✓ Don't close the GREEN or YELLOW windows while using
+✓ Use STOP script when you're done
+✓ If something goes wrong, run STOP then START again
+
+========================================
+ENJOY YOUR LEGACY PLANNER!
+========================================
