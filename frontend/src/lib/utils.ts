@@ -27,9 +27,15 @@ export function formatPercentage(value: number, decimals: number = 1): string {
 /**
  * Get current date formatted
  */
-export function getCurrentDate(): string {
-  return new Date().toISOString().split('T')[0];
-}
+export const getCurrentDate = (): string => {
+  const now = new Date();
+  const options: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  };
+  return now.toLocaleDateString('en-US', options);
+};
 
 /**
  * Get formatted date string

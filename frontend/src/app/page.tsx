@@ -121,7 +121,7 @@ export default function Home() {
       <aside className="w-72 bg-[#172a46] border-r border-gray-700 p-6 no-print flex-shrink-0">
         <div className="mb-8">
           <h1 className="text-2xl font-bold text-white">
-            Genesis<span className="highlight">Adv</span>
+            Genesis<span className="text-primary">Adv</span>
           </h1>
         </div>
         
@@ -172,45 +172,84 @@ export default function Home() {
 
         {/* Introduction Section */}
         {activeSection === 'introduction' && (
-          <div className="animate-fade-in">
-            <h1 className="text-4xl font-bold mb-4">
-              Comprehensive <span className="highlight">Legacy Planning</span> Suite
-            </h1>
-            <div className="w-32 h-1 bg-gray-400 opacity-50 mb-6"></div>
+  <div className="p-4">
+    {/* Header with Title and Date - MISSING PART 1 */}
+    <div className="flex justify-between items-center mb-8">
+      <div className="text-gray-300 text-sm">
+        Comprehensive Legacy Planning Suite<br />
+        <span className="text-xs opacity-70">Professional Wealth Transfer Analysis</span>
+      </div>
+      <div className="text-right text-sm text-gray-400">
+        <div>{getCurrentDate()}</div>
+        <div>Financial Planning Dashboard</div>
+      </div>
+    </div>
+
+    <div className="mb-8">
+      <h1 className="text-4xl lg:text-5xl font-bold mb-2">
+        Comprehensive <span className="text-primary">Legacy Planning</span> Suite
+      </h1>
+      <div className="w-32 h-1 bg-white opacity-50 mt-4 mb-4"></div>
+      <p className="text-lg lg:text-xl text-gray-300 max-w-4xl">
+        An integrated platform combining personal wealth planning, trust fund management, and
+        intergenerational equity analysis. Ensure your family's financial security for generations 
+        to come with professional-grade calculations and visualizations.
+      </p>
+    </div>
+
+    {/* Three Feature Cards */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
+      <div className="bg-[#172a46] p-6 rounded-lg border-l-4 border-primary hover:transform hover:-translate-y-1 transition-transform">
+        <div className="text-3xl font-bold mb-2 text-primary">👥</div>
+        <div className="text-sm text-gray-300 font-medium">Intergenerational Equity</div>
+        <div className="text-xs text-gray-400 mt-2">Calculate wealth preservation across generations</div>
+      </div>
+      <div className="bg-[#172a46] p-6 rounded-lg border-l-4 border-primary hover:transform hover:-translate-y-1 transition-transform">
+        <div className="text-3xl font-bold mb-2 text-primary">🛡️</div>
+        <div className="text-sm text-gray-300 font-medium">Trust Fund Simulation</div>
+        <div className="text-xs text-gray-400 mt-2">Model multi-generational trust longevity</div>
+      </div>
+      <div className="bg-[#172a46] p-6 rounded-lg border-l-4 border-primary hover:transform hover:-translate-y-1 transition-transform">
+        <div className="text-3xl font-bold mb-2 text-primary">📊</div>
+        <div className="text-sm text-gray-300 font-medium">Advanced Analytics</div>
+        <div className="text-xs text-gray-400 mt-2">Comprehensive scenario analysis and reporting</div>
+      </div>
+    </div>
+
+    {/* Getting Started Section - MISSING PART 2 */}
+    <div className="bg-gray-800 bg-opacity-30 rounded-lg p-6">
+      <h3 className="text-lg font-medium mb-4">Getting Started</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <h4 className="font-medium text-primary mb-2">1. Client Information</h4>
+          <p className="text-sm text-gray-300">Enter client details for professional report generation</p>
+        </div>
+        <div>
+          <h4 className="font-medium text-primary mb-2">2. Personal Wealth Planning</h4>
+          <p className="text-sm text-gray-300">Analyze intergenerational equity and inflation impact</p>
+        </div>
+        <div>
+          <h4 className="font-medium text-primary mb-2">3. Trust & Estate Planning</h4>
+          <p className="text-sm text-gray-300">Model trust fund longevity and family growth</p>
+        </div>
+        <div>
+          <h4 className="font-medium text-primary mb-2">4. Generate Reports</h4>
+          <p className="text-sm text-gray-300">Create professional PDF reports with visualizations</p>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
             
-            <p className="text-xl text-gray-300 mb-8 max-w-4xl">
-              An integrated platform combining personal wealth planning, trust fund management, 
-              and intergenerational equity analysis.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-              <div className="bg-[#172a46] p-6 rounded-lg border-l-4 border-primary hover:transform hover:scale-105 transition-transform">
-                <div className="text-3xl mb-3">👨‍👩‍👧‍👦</div>
-                <h3 className="font-semibold mb-2">Intergenerational Equity</h3>
-                <p className="text-sm text-gray-400">Calculate wealth preservation across generations</p>
-              </div>
-
-              <div className="bg-[#172a46] p-6 rounded-lg border-l-4 border-primary hover:transform hover:scale-105 transition-transform">
-                <div className="text-3xl mb-3">🛡️</div>
-                <h3 className="font-semibold mb-2">Trust Fund Simulation</h3>
-                <p className="text-sm text-gray-400">Model multi-generational trust longevity</p>
-              </div>
-
-              <div className="bg-[#172a46] p-6 rounded-lg border-l-4 border-primary hover:transform hover:scale-105 transition-transform">
-                <div className="text-3xl mb-3">📊</div>
-                <h3 className="font-semibold mb-2">Advanced Analytics</h3>
-                <p className="text-sm text-gray-400">Comprehensive scenario analysis and reporting</p>
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* Client Info Section */}
         {activeSection === 'client-info' && (
-          <div className="animate-fade-in">
+          <div className="p-4">
             <h1 className="text-2xl font-bold mb-4">
-              Client <span className="highlight">Information</span>
+              Client <span className="text-primary">Information</span>
             </h1>
+            <p className="text-sm text-gray-300 mb-6">
+              Enter client details for professional report generation. This information will appear on all generated reports.
+            </p>
             
             <div className="bg-[#172a46] rounded-lg p-6 mb-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -255,26 +294,41 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-gray-800 bg-opacity-40 rounded">
-                <h3 className="font-medium mb-2">Report Preview</h3>
-                <div className="text-sm text-gray-300 space-y-1">
-                  <div>Prepared for: <span className="highlight">{clientInfo.clientName || 'Client Name'}</span></div>
-                  <div>Date: <span className="highlight">{clientInfo.reportDate}</span></div>
-                  <div>Prepared by: <span className="highlight">{clientInfo.advisorName || 'Advisor Name'}</span></div>
-                  <div>Firm: <span className="highlight">{clientInfo.firmName || 'Firm Name'}</span></div>
-                </div>
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium mb-2">Report Purpose</label>
+                <textarea
+                  value={clientInfo.reportPurpose}
+                  onChange={(e) => setClientInfo({...clientInfo, reportPurpose: e.target.value})}
+                  className="w-full bg-[#0a192f] border border-gray-600 rounded-md px-3 py-2 text-gray-100 focus:outline-none focus:border-primary"
+                  rows={3}
+                  placeholder="Brief description of the analysis purpose (optional)"
+                />
+              </div>
+            </div>
+
+            {/* Report Preview */}
+            <div className="mt-6 p-4 bg-gray-800 bg-opacity-40 rounded">
+              <h3 className="font-medium mb-2">Report Preview</h3>
+              <div className="text-sm text-gray-300 space-y-1">
+                <div>Prepared for: <span className="text-primary">{clientInfo.clientName || 'Client Name'}</span></div>
+                <div>Date: <span className="text-primary">{clientInfo.reportDate}</span></div>
+                <div>Prepared by: <span className="text-primary">{clientInfo.advisorName || 'Advisor Name'}</span></div>
+                <div>Firm: <span className="text-primary">{clientInfo.firmName || 'Firm Name'}</span></div>
               </div>
             </div>
           </div>
-        )}
+        )} 
 
         {/* Personal Wealth Section */}
         {activeSection === 'personal-wealth' && results && (
           <div className="animate-fade-in">
             <h1 className="text-2xl font-bold mb-4">
-              Personal Wealth <span className="highlight">Planning</span>
+              Personal Wealth <span className="text-primary">Planning</span>
             </h1>
-            
+            <p className="text-sm text-gray-300 mb-6">
+              Analyze intergenerational equity, inflation impact, and business growth requirements for maintaining family lifestyle across generations.
+            </p>
+
             <div className="bg-[#172a46] rounded-lg p-6 mb-6">
               <h2 className="text-xl font-semibold mb-4">Intergenerational Equity Calculator</h2>
               
@@ -357,6 +411,57 @@ export default function Home() {
                       step="1"
                       value={params.taxRate}
                       onChange={(e) => updateParam('taxRate', parseFloat(e.target.value))}
+                      className="w-full"
+                    />
+                  </div>
+
+                  
+                  <div>
+                    <div className="flex justify-between mb-1">
+                      <label className="text-xs text-gray-300">Country/Region</label>
+                    </div>
+                    <select
+                      value={params.country}
+                      onChange={(e) => {
+                        const country = e.target.value;
+                        const inflationRates: Record<string, number> = {
+                          'USA': 2.6,
+                          'Singapore': 2.2,
+                          'China': 2.6,
+                          'Indonesia': 6.1,
+                          'Australia': 2.8,
+                          'Canada': 2.2,
+                          'UK': 2.8,
+                          'Hong Kong': 2.5
+                        };
+                        updateParam('country', country);
+                        updateParam('inflationRate', inflationRates[country]);
+                      }}
+                      className="w-full text-xs bg-gray-700 border border-gray-600 rounded px-2 py-1 text-white focus:outline-none focus:border-primary"
+                    >
+                      <option value="USA">USA (2.6%)</option>
+                      <option value="Singapore">Singapore (2.2%)</option>
+                      <option value="China">China (2.6%)</option>
+                      <option value="Indonesia">Indonesia (6.1%)</option>
+                      <option value="Australia">Australia (2.8%)</option>
+                      <option value="Canada">Canada (2.2%)</option>
+                      <option value="UK">UK (2.8%)</option>
+                      <option value="Hong Kong">Hong Kong (2.5%)</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <div className="flex justify-between mb-1">
+                      <label className="text-xs text-gray-300">Inflation Rate (%)</label>
+                      <span className="text-xs font-medium">{formatPercentage(params.inflationRate)}</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="1"
+                      max="8"
+                      step="0.1"
+                      value={params.inflationRate}
+                      onChange={(e) => updateParam('inflationRate', parseFloat(e.target.value))}
                       className="w-full"
                     />
                   </div>
@@ -502,6 +607,22 @@ export default function Home() {
 
                   <div>
                     <div className="flex justify-between mb-1">
+                      <label className="text-xs text-gray-300">Families Currently Supported</label>
+                      <span className="text-xs font-medium">{params.currentFamilies}</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="1"
+                      max="5"
+                      step="1"
+                      value={params.currentFamilies}
+                      onChange={(e) => updateParam('currentFamilies', parseInt(e.target.value))}
+                      className="w-full"
+                    />
+                  </div>
+
+                  <div>
+                    <div className="flex justify-between mb-1">
                       <label className="text-xs text-gray-300">Additional Families</label>
                       <span className="text-xs font-medium">{params.additionalFamilies}</span>
                     </div>
@@ -615,7 +736,7 @@ export default function Home() {
         {activeSection === 'trust-estate' && results && (
           <div className="animate-fade-in">
             <h1 className="text-2xl font-bold mb-4">
-              Trust & Estate <span className="highlight">Planning</span>
+              Trust & Estate <span className="text-primary">Planning</span>
             </h1>
             
             <div className="bg-[#172a46] rounded-lg p-6 mb-6">
@@ -1124,152 +1245,129 @@ export default function Home() {
           </div>
         )}
 
-        {/* Summary Section */}
-        {activeSection === 'summary' && results && (
-          <div className="animate-fade-in">
-            <h1 className="text-2xl font-bold mb-4">
-              Executive <span className="highlight">Summary</span>
-            </h1>
-            
-            <div className="bg-[#172a46] rounded-lg p-6 mb-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold highlight">{formatPercentage(results.equity.equity40yr, 0)}</div>
-                  <div className="text-sm text-gray-300 mt-2">Intergenerational Equity</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold highlight">{results.trust.totalGenerations.toFixed(1)}</div>
-                  <div className="text-sm text-gray-300 mt-2">Trust Generations</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold highlight">{formatPercentage(results.business.requiredGrowthRate)}</div>
-                  <div className="text-sm text-gray-300 mt-2">Required Business Growth</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold highlight">{formatPercentage(results.allocation.expectedReturn)}</div>
-                  <div className="text-sm text-gray-300 mt-2">Portfolio Expected Return</div>
-                </div>
-              </div>
+      {/* Summary Section */}
+{activeSection === 'summary' && results && (
+  <div className="animate-fade-in">
+    <h1 className="text-2xl font-bold mb-4">
+      Summary & <span className="text-primary">Reports</span>
+    </h1>
+    <p className="text-sm text-gray-300 mb-6">
+      Comprehensive analysis summary and professional report generation with client information and data visualizations.
+    </p>
+    
+    <div className="bg-[#172a46] rounded-lg p-6 mb-6">
+      <h2 className="text-xl font-semibold mb-4">Executive Summary</h2>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="text-center">
+          <div className="text-3xl font-bold text-primary">{formatPercentage(results.equity.equity40yr, 0)}</div>
+          <div className="text-sm text-gray-300 mt-2">Intergenerational Equity</div>
+        </div>
+        <div className="text-center">
+          <div className="text-3xl font-bold text-primary">{results.trust.totalGenerations.toFixed(1)}</div>
+          <div className="text-sm text-gray-300 mt-2">Trust Generations</div>
+        </div>
+        <div className="text-center">
+          <div className="text-3xl font-bold text-primary">{formatPercentage(results.business.requiredGrowthRate)}</div>
+          <div className="text-sm text-gray-300 mt-2">Required Business Growth</div>
+        </div>
+        <div className="text-center">
+          <div className="text-3xl font-bold text-primary">{formatPercentage(results.allocation.expectedReturn)}</div>
+          <div className="text-sm text-gray-300 mt-2">Portfolio Expected Return</div>
+        </div>
+      </div>
 
-              <div className="bg-gray-800 bg-opacity-40 p-6 rounded mb-6">
-                <h3 className="font-medium mb-4">Key Findings</h3>
-                <ul className="space-y-2 text-sm text-gray-300">
-                  <li>• {results.equity.insight}</li>
-                  <li>• {results.trust.insight}</li>
-                  <li>• {results.business.insight}</li>
-                  <li>• Portfolio allocation provides {results.allocation.riskLevel.toLowerCase()} risk-return profile</li>
-                </ul>
-              </div>
+      <div className="bg-gray-800 bg-opacity-40 p-4 rounded mb-4">
+        <h3 className="font-medium mb-2">Key Findings</h3>
+        <ul className="space-y-1 text-sm text-gray-300">
+          <li>• {results.equity.insight}</li>
+          <li>• {results.trust.insight}</li>
+          <li>• {results.business.insight}</li>
+          <li>• Portfolio allocation provides {results.allocation.riskLevel.toLowerCase()} risk-return profile</li>
+        </ul>
+      </div>
 
-              <div className="bg-gray-800 bg-opacity-40 p-6 rounded mb-6">
-                <h3 className="font-medium mb-4">Recommendations</h3>
-                <ul className="space-y-2 text-sm text-gray-300">
-                  <li>• Consider increasing annual contributions to enhance long-term wealth preservation</li>
-                  <li>• Review asset allocation periodically to maintain optimal risk-return balance</li>
-                  <li>• Implement business growth strategies to support expanding family needs</li>
-                  <li>• Regular monitoring of inflation impact on purchasing power</li>
-                  <li>• Consider trust structure optimization for tax efficiency</li>
-                </ul>
-              </div>
+      <div className="bg-gray-800 bg-opacity-40 p-4 rounded">
+        <h3 className="font-medium mb-2">Recommendations</h3>
+        <ul className="space-y-1 text-sm text-gray-300">
+          <li>• Consider increasing annual contributions to enhance long-term wealth preservation</li>
+          <li>• Review asset allocation periodically to maintain optimal risk-return balance</li>
+          <li>• Implement business growth strategies to support expanding family needs</li>
+          <li>• Regular monitoring of inflation impact on purchasing power</li>
+        </ul>
+      </div>
+    </div>
 
-              {results.scenarios && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <h3 className="font-medium mb-4">Personal Wealth Scenarios</h3>
-                    <div className="space-y-3">
-                      {results.scenarios.personal.map((scenario, index) => (
-                        <div key={index} className="bg-gray-800 p-3 rounded-lg">
-                          <div className="flex justify-between items-center">
-                            <span className="text-sm text-gray-300">{scenario.name}</span>
-                            <div className="text-right">
-                              <span className="font-bold text-white">{formatPercentage(scenario.equity40yr || 0, 0)}</span>
-                              <span className={`block text-xs ${
-                                scenario.improvementClass === 'success' ? 'text-green-400' :
-                                scenario.improvementClass === 'warning' ? 'text-red-400' :
-                                'text-gray-400'
-                              }`}>
-                                {scenario.improvement >= 0 ? '+' : ''}{formatPercentage(scenario.improvement, 0)}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="font-medium mb-4">Trust Fund Scenarios</h3>
-                    <div className="space-y-3">
-                      {results.scenarios.trust.map((scenario, index) => (
-                        <div key={index} className="bg-gray-800 p-3 rounded-lg">
-                          <div className="flex justify-between items-center">
-                            <span className="text-sm text-gray-300">{scenario.name}</span>
-                            <div className="text-right">
-                              <span className="font-bold text-white">{(scenario.totalGenerations || 0).toFixed(1)} gens</span>
-                              <span className={`block text-xs ${
-                                scenario.improvementClass === 'success' ? 'text-green-400' :
-                                scenario.improvementClass === 'warning' ? 'text-red-400' :
-                                'text-gray-400'
-                              }`}>
-                                {scenario.improvement >= 0 ? '+' : ''}{scenario.improvement.toFixed(1)} gens
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              <div className="pt-6 border-t border-gray-700 mb-6">
-                <h3 className="font-medium mb-4">Report Information</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Client:</span>
-                    <span className="font-medium">{clientInfo.clientName || 'Not specified'}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Date:</span>
-                    <span className="font-medium">{clientInfo.reportDate}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Advisor:</span>
-                    <span className="font-medium">{clientInfo.advisorName || 'Not specified'}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Firm:</span>
-                    <span className="font-medium">{clientInfo.firmName || 'Not specified'}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button 
-                  onClick={() => window.print()}
-                  className="bg-gradient-to-r from-primary to-blue-600 text-primary-dark font-semibold py-3 px-8 rounded-lg hover:opacity-90 transition-opacity"
-                >
-                  🖨️ Print Report
-                </button>
-                <button 
-                  onClick={() => {
-                    const dataStr = JSON.stringify({...params, ...clientInfo, results}, null, 2);
-                    const dataBlob = new Blob([dataStr], { type: 'application/json' });
-                    const url = URL.createObjectURL(dataBlob);
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = `legacy-planning-data-${Date.now()}.json`;
-                    link.click();
-                    URL.revokeObjectURL(url);
-                  }}
-                  className="bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg hover:bg-gray-600 transition-colors"
-                >
-                  💾 Export Data
-                </button>
-              </div>
+    {/* Professional Report Generation Section */}
+    <div className="bg-[#172a46] rounded-lg p-6">
+      <h2 className="text-xl font-semibold mb-4">Professional Report Generation</h2>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <h3 className="font-medium mb-3">Report Details</h3>
+          <div className="space-y-2 text-sm">
+            <div className="flex justify-between">
+              <span className="text-gray-300">Client:</span>
+              <span className="font-medium">{clientInfo.clientName || 'Not specified'}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-300">Date:</span>
+              <span className="font-medium">{clientInfo.reportDate}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-300">Advisor:</span>
+              <span className="font-medium">{clientInfo.advisorName || 'Not specified'}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-300">Firm:</span>
+              <span className="font-medium">{clientInfo.firmName || 'Not specified'}</span>
             </div>
           </div>
-        )}
+        </div>
+        
+        <div>
+          <h3 className="font-medium mb-3">Report Contents</h3>
+          <ul className="text-sm text-gray-300 space-y-1">
+            <li>✓ Executive Summary</li>
+            <li>✓ Intergenerational Equity Analysis</li>
+            <li>✓ Trust Fund Longevity Projection</li>
+            <li>✓ Business Growth Requirements</li>
+            <li>✓ Asset Allocation Strategy</li>
+            <li>✓ Scenario Analysis</li>
+            <li>✓ Data Visualizations</li>
+            <li>✓ Professional Recommendations</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <button 
+          onClick={() => window.print()}
+          className="bg-gradient-to-r from-primary to-blue-600 text-[#0a192f] font-semibold py-3 px-8 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+        >
+          <span>📄</span>
+          Generate PDF Report
+        </button>
+        <button 
+          onClick={() => {
+            const dataStr = JSON.stringify({...params, ...clientInfo, results}, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `legacy-planning-data-${Date.now()}.json`;
+            link.click();
+            URL.revokeObjectURL(url);
+          }}
+          className="bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg hover:bg-gray-600 transition-colors flex items-center justify-center gap-2"
+        >
+          <span>💾</span>
+          Export Data
+        </button>
+      </div>
+    </div>
+  </div>
+)}
       </main>
     </div>
   );
