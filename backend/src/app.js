@@ -15,12 +15,37 @@ const app = express();
 // Middleware
 app.use(helmet());
 app.use(compression());
+
 // CORS configuration for production
+// CORS configuration - allow all Vercel URLs
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://legacy-planner.vercel.app',
+  'https://legacy-planner-eobsx7wb5-davesgenesis-projects.vercel.app',
+  'https://legacy-planner-git-main-davesgenesis-projects.vercel.app'
+];
+
+// Also allow CORS_ORIGIN from environment variable
+if (process.env.CORS_ORIGIN && !allowedOrigins.includes(process.env.CORS_ORIGIN)) {
+  allowedOrigins.push(process.env.CORS_ORIGIN);
+}
+
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps, Postman, curl)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   optionsSuccessStatus: 200
 };
+
+app.use(cors(corsOptions));
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
