@@ -4,6 +4,9 @@ import { useEffect } from 'react';
 
 export default function Protection() {
   useEffect(() => {
+    // ⚠️ CRITICAL FIX: Check if we're inside an iframe
+    const isInIframe = window.self !== window.top;
+
     // Disable right-click
     const handleContextMenu = (e: Event) => {
       e.preventDefault();
@@ -35,26 +38,36 @@ export default function Protection() {
       return false;
     };
 
-    // DevTools detection
-    const detectDevTools = setInterval(() => {
-      const threshold = 160;
-      if (window.outerWidth - window.innerWidth > threshold || 
-          window.outerHeight - window.innerHeight > threshold) {
-        document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#0a192f;color:#64ffda;font-family:Montserrat,sans-serif;font-size:24px;text-align:center;padding:20px;">⚠️ Developer Tools detected. Please close it to continue.</div>';
-      }
-    }, 500);
-
+    // Add event listeners (these work fine in iframes)
     document.addEventListener('contextmenu', handleContextMenu);
     document.addEventListener('keydown', handleKeyDown);
     document.addEventListener('selectstart', handleSelectStart);
     document.addEventListener('copy', handleCopy);
 
+    // DevTools detection - ONLY run if NOT in iframe
+    let detectDevTools: NodeJS.Timeout | null = null;
+    
+    if (!isInIframe) {
+      detectDevTools = setInterval(() => {
+        const threshold = 160;
+        if (window.outerWidth - window.innerWidth > threshold || 
+            window.outerHeight - window.innerHeight > threshold) {
+          document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#0a192f;color:#64ffda;font-family:Montserrat,sans-serif;font-size:24px;text-align:center;padding:20px;">⚠️ Developer Tools detected. Please close it to continue.</div>';
+        }
+      }, 500);
+    }
+
+    // Cleanup function
     return () => {
       document.removeEventListener('contextmenu', handleContextMenu);
       document.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('selectstart', handleSelectStart);
       document.removeEventListener('copy', handleCopy);
-      clearInterval(detectDevTools);
+      
+      // Only clear interval if it was created
+      if (detectDevTools) {
+        clearInterval(detectDevTools);
+      }
     };
   }, []);
 
